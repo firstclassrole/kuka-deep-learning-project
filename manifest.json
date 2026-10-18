@@ -5,6 +5,11 @@
   "excludes_self": true,
   "files": [
     {
+      "path": "output/documents/EG-353-POIP-2634068_Excel_Revision.docx",
+      "bytes": 1324816,
+      "sha256": "1da189951f898d26d748d0005324a307e509658d6534932dd39b42e041c67d66"
+    },
+    {
       "path": "output/documents/EG-353-POIP-2634068.docx",
       "bytes": 449023,
       "sha256": "84dc7272ff8436c40eb35f5d7b25efa95d6a53e2a177d2692a49a7dc163d6a86"
@@ -48,6 +53,11 @@
       "path": "output/research/KUKA_1mm研究路线与实验计划.md",
       "bytes": 9350,
       "sha256": "d10843eb17406e3c78e2a4fbfe63624aebff45443430b41a3ceb7fde663888a1"
+    },
+    {
+      "path": "output/spreadsheets/KUKA_Project_Gantt_and_Risk_Assessment.xlsx",
+      "bytes": 15861,
+      "sha256": "7e67884d3259f33e9e8e9052f49ba3e6cbf8ac66efa8d3262be6da8683eb529e"
     },
     {
       "path": "output/tutorials/kuka_1mm_beginner/KUKA逐点1mm新手教程.md",
@@ -166,8 +176,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5398,
-      "sha256": "ae7b9b019f104f38674eddccc3bfb885d95f32fa2818c3ef4abe1b7656bbe1e3"
+      "bytes": 6272,
+      "sha256": "d8c094ac1b776df7e9e0775c634f4a8a8cde66ce6d68bcbd7f676c796d171fd5"
     }
   ]
 }
