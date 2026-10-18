@@ -1,0 +1,212 @@
+﻿项目103642文献检索与初步规划
+日期：2026-10-13
+
+一、从导师材料确定当前任务
+
+项目题目：Robotic Arm Control Through Deep Learning: A Study on Predictive Modeling of Joint Angles with Kuka Robotic Arm。
+
+导师邮件要求学习机器人学、CoppeliaSim、神经网络机械臂控制和机械臂建模，利用项目题目的关键词检索近期研究，并准备两页报告，说明对项目目标和这些基础内容的理解。
+
+当前应形成一条可讨论的研究路线：明确预测任务 → 查找同类论文 → 确定数据和基线 → 设计评价实验 → 写两页初步报告。
+
+邮件没有给出具体 KUKA 型号、网络输入输出、数据集或提交日期。下面的论文数量、时间和实验配置是建议，不是导师已经规定的要求。
+
+二、先把关节角度预测分成三类检索任务
+
+A. 逆运动学角度预测
+输入：希望机械臂末端达到的位置和朝向；视选解方法也可能包含当前关节配置。
+输出：能够实现目标的关节角度，或用于选择逆解的中间参数。
+研究问题：神经网络能否在保证末端精度和有效解比例的同时，减少求解时间？
+检索关键词：inverse kinematics、joint angle prediction、neural network、KUKA。
+
+B. 未来关节角度预测
+输入：过去和当前的关节角度、速度，以及任务所需的控制指令或其他状态。
+输出：未来一个或多个时刻的实际关节角度。
+研究问题：模型在未见过的运动轨迹上，能否准确预测未来状态？
+检索关键词：joint state prediction、joint angle forecasting、time series、robot manipulator。
+
+C. 神经网络机械臂控制
+输入：机械臂状态、期望轨迹和跟踪误差等。
+输出：关节力矩或未知动力学的补偿项。
+研究问题：神经网络能否提高机械臂对给定轨迹的跟踪性能？
+检索关键词：neural network control、adaptive control、dynamics compensation、trajectory tracking。
+
+Lewis 教材的重点属于 C。项目标题同时提到 control 和 predictive modeling，单靠标题还不能确定老师要求 A、B，还是包含预测模型的控制系统。应当分别检索，再请导师明确主线。
+
+三、按研究问题阅读导师给的资料
+
+1. Craig 机器人学教材
+先读第2章的坐标表示和变换，再读第3章的正运动学与第4章的逆运动学。阅读目标是用自己的话说明：关节角度如何决定末端位姿，为什么一个末端目标可能有多个角度解。
+重点位置：正运动学 §3.5-3.6，书内73-76页，PDF81-84页；逆运动学 §4.2，书内101-106页，PDF109-114页。
+随后读第7章轨迹生成，书内201页起，PDF209页起；理解路径点、时间、角度、速度之间的关系。需要处理速度和奇异点时，再补第5章 Jacobian。
+
+2. Lewis 神经网络控制教材
+先读 §1.3 的网络训练，书内33-60页，PDF60-87页；重点掌握输入向量、标签、损失函数和训练过程。
+再读第3章机器人动力学与控制，书内125页起，PDF152页起；第4章神经网络机器人控制，书内175页起，PDF202页起。先理解框架中的网络输入、网络输出和反馈信号，再逐步学习推导。
+若导师明确选择未来状态预测，再深入第9章系统辨识与状态估计。该章实际首页为书内415页，PDF442页，目录标注与正文不一致。
+
+3. CoppeliaSim 建模教程
+重点看PDF6-8页的关节位置与轴向，9-12页的模型配置与动力学几何体，13-14页的位置控制。
+学习目标：能够找到关节、设置目标角度、读取实际角度和末端位姿，并理解模型层级及参考坐标系。
+可以先使用与导师确认型号一致的现有模型。只有模型缺失或研究需要时，才扩大到完整CAD建模。
+
+4. 官方接口资料
+ZeroMQ Remote API 支持Python等外部程序与仿真交互，并提供按仿真步同步运行的方式，可作为数据采集接口的学习起点。
+官方逆运动学教程展示 simIK 的配置和求解方法，可帮助建立传统数值方法的参考结果。
+接口写法需与实际安装的 CoppeliaSim 版本对应。
+
+四、如何检索文献
+
+先在 Google Scholar 做宽检索，掌握常用术语，再加入 KUKA 或具体型号。第一轮优先查看2021年至检索当日的论文，同时保留直接相关的经典方法。数量建议为初筛8-12篇、精读4-6篇、最终选1-2篇作为可实现的参考方案。
+
+可逐条复制的查询词：
+
+robot manipulator joint angle prediction deep learning
+robot manipulator inverse kinematics neural network
+KUKA inverse kinematics neural network
+KUKA deep learning joint angle prediction
+robot manipulator joint state prediction time series
+robot manipulator joint angle forecasting LSTM
+neural network robot manipulator control trajectory tracking
+robot manipulator neural network dynamics compensation
+deep learning inverse kinematics review
+author:"Ashraf Fahmy" inverse kinematics
+
+具体操作顺序：
+1. 先按相关性查看结果，用年份筛选查近期工作。
+2. 看标题、摘要、方法框图和实验设置，确认真实输入与输出。
+3. 找到一篇合适论文后，查它的 References；再用 Cited by 查后续研究，Related articles 查相近任务。
+4. 通过 DOI、出版社网页、作者大学仓储或作者预印本核对题名、年份和版本。需要订阅时，尝试学校图书馆入口或合法开放版本。
+5. 对保留论文记录读到了什么：仅题录、读过摘要，还是读过方法和实验。不要把摘要中的优点当作已完成复现的结果。
+
+初筛标准：
+研究的是机械臂关节，而不是人体关节吗？输入输出属于哪一类任务？使用的机器人与本项目有何差异？训练数据和标签如何获得？是否提供代码、模型或数据？是否与传统方法比较？评价指标是否足以支持结论？
+
+注意：论文用了 LSTM，并不自动说明它在预测未来时刻。必须检查时间窗口、预测步长和标签；有些论文仍在求静态逆运动学。
+
+五、已核实的检索起点
+
+1. 导师参与的经典论文
+题名：Learning the Inverse Kinematics of a Robot Manipulator using the Bees Algorithm
+作者：D. T. Pham、M. Castellani、A. A. Fahmy
+年份：2008
+DOI：10.1109/INDIN.2008.4618151
+内容：使用 Bees Algorithm 训练多层感知机，学习机械臂主要三个关节的逆运动学，并与其他训练方法比较。
+用途：理解导师研究背景，沿其参考文献和被引论文扩展检索。它不能证明当前项目一定采用相同方法，也不能直接视为现代深度学习方案。
+核实程度：大学机构题录与摘要；尚未复现全文方法。
+来源：https://research.birmingham.ac.uk/en/publications/learning-the-inverse-kinematics-of-a-robot-manipulator-using-the--2/
+导师作者关联：https://cronfa.swan.ac.uk/Record/cronfa62571
+
+2. 与 KUKA 直接相关的机器学习逆运动学研究
+题名：Machine Learning-based Framework for Optimally Solving the Analytical Inverse Kinematics for Redundant Manipulators
+作者：M. N. Vu 等
+年份：2023，Mechatronics
+DOI：10.1016/j.mechatronics.2023.102970
+机器人：KUKA LBR iiwa 14 R820。
+输入：当前关节配置和目标末端位姿。
+输出：网络预测冗余配置参数，再结合解析逆运动学得到目标关节角度。
+用途：学习多解处理、任务输入的定义以及学习模型与传统求解器结合的方式。它不是直接预测未来实际角度的时序模型，也不宜将其完整复杂框架直接设为第一版目标。
+核实程度：作者公开正文，已核对任务与方法框架。
+来源：https://arxiv.org/html/2211.04275v3
+
+3. 有公开代码与数据的深度学习逆运动学研究
+题名：Inverse Kinematics for Robotic Manipulators via Deep Neural Networks: Experiments and Results
+作者：Ana Calzada-Garcia、Juan G. Victores、Francisco J. Naranjo-Campos、Carlos Balaguer
+年份：2025，Applied Sciences 15，7226
+DOI：10.3390/app15137226
+机器人：TIAGo的7自由度机械臂，非KUKA。
+输入与输出：目标末端位置/朝向 → 关节角度。
+用途：学习数据生成、预处理、模型比较及末端误差评价。研究范围是静态逆运动学；其他型号的数据不能直接当作KUKA标签使用。
+核实程度：出版社全文，已核对数据、输入输出和实验范围；论文列有代码和数据公开链接，尚未运行代码。
+全文：https://mdpi-res.com/d_attachment/applsci/applsci-15-07226/article_deploy/applsci-15-07226.pdf
+论文给出的代码：https://github.com/anacg1620/tiago_dnn_ik/releases/tag/v1.0.0
+论文给出的数据：https://doi.org/10.5281/zenodo.15365939
+
+以上三篇用于建立检索路线，不代表已经完成系统文献综述。若导师选择时序预测，需重新以该任务的输入输出筛选核心方法论文。
+
+六、每篇论文怎么做笔记
+
+建议为每篇论文填写以下字段，后续可以整理成文献对比表：
+
+题名与年份：
+DOI及来源：
+阅读程度：题录 / 摘要 / 方法与实验 / 已复现
+研究任务：逆运动学 / 未来状态预测 / 控制 / 其他
+机器人型号和关节数：
+模型输入：
+模型输出：
+数据与标签来源：
+数据划分方式：
+传统或简单基线：
+评价指标及单位：
+主要结论与适用条件：
+局限和复现成本：
+对本项目可借鉴的一点：
+
+不要仅记录某篇论文的准确率。不同机械臂、误差单位、工作空间和测试集下的数字，通常不能直接横向比较。
+
+七、把文献变成实验计划
+
+先写出一条任务句：在指定KUKA模型和指定数据条件下，使用明确的输入，预测明确的输出，并与指定基线比较精度、有效性与计算开销。
+
+若导师确认逆运动学路线，可讨论的第一版方案是：
+1. 明确型号、关节限位、基座/工具坐标系和末端朝向表示。
+2. 在限定工作空间生成有效角度与末端位姿配对，明确多解时的标签选择规则。
+3. 建立数值逆运动学参考方法和简单MLP基线，再考虑更深网络。
+4. 评估各关节角度误差、末端位置和朝向误差、有效解比例，以及同一硬件上的推理时间。
+5. 选一个可研究因素，例如数据量、工作空间覆盖、朝向表示或网络规模，做受控比较。先查文献，确定该因素的意义和已有结论。
+
+若导师确认未来状态预测路线，可讨论的第一版方案是：
+1. 明确采样间隔、输入历史长度、预测步长和可用控制指令。
+2. 记录多条完整运动轨迹，以实际测得的未来关节角度为标签。
+3. 先比较“沿用当前角度”或简单外推基线，再比较MLP与一种时序模型。
+4. 按完整轨迹或实验条件划分训练、验证和测试集，评价各关节误差，以及单步和多步预测效果。
+
+若导师确认神经网络闭环控制路线，应增加动力学模型、控制基线、跟踪误差和闭环实验设计；不能将仅有离线预测精度的结果直接当作控制效果。
+
+通用实验要求：
+数据标准化只拟合训练集；测试集不参与选模型。记录数据版本、随机种子、软件版本、单位和硬件。出现多个有效逆解时，应同时看末端任务误差，不能仅凭与某一标签的角度差判断失败。先在仿真中建立可重复实验。
+
+八、建议的首轮两周安排
+
+下面是建议投入顺序，不是导师规定的截止日期。
+
+第1-3天：阅读运动学基础，分别写出三类任务的输入输出；汇总需要导师确认的问题。
+产出：一页任务定义草案。
+
+第4-7天：初筛8-12篇文献；学习CoppeliaSim模型和数据读写。
+产出：文献记录表、一个能读取关节角度和末端位姿的小场景。
+
+第8-10天：精读最接近任务的4-6篇论文，确定数据、标签、基线和指标。
+产出：可讨论的实验方案。导师回复尚未到达时，继续共通基础工作。
+
+第11-14天：完成两页报告，结合导师反馈修改任务范围和后续里程碑。
+产出：两页报告及实施清单。
+
+后续里程碑可按最终截止日期倒排：
+M1 明确任务和型号；M2 数据与基线可运行；M3 深度学习模型完成初版；M4 独立测试和因素比较；M5 结果分析与论文写作。
+每个里程碑用可以检查的产出来判断完成，而不只写“学习”或“优化”。
+
+九、两页报告建议结构
+
+第1页：项目背景、关节角度预测的拟定定义、导师材料中学到的关键概念，以及2-3篇相关研究如何处理同类问题。
+
+第2页：拟研究问题、KUKA和仿真平台、数据与标签、基线和模型、评价方法、阶段计划，以及仍需导师明确的问题；列出实际引用的资料。
+
+可以向导师集中确认三个问题：
+1. 角度预测是由目标末端位姿求角度，还是由状态历史预测未来角度？是否需要把预测模型接入闭环控制？
+2. 使用哪款KUKA？纯CoppeliaSim仿真是否满足要求？是否有现成场景或数据？
+3. 两页报告和最终项目的关键日期是什么？是否有指定基线或必读论文？
+
+十、本地与在线依据
+
+本地导师邮件：D:\Swansea-杜亦冯\biyeshj\邮件 - DU Y. (2634068) - Outlook.pdf
+本地机器人学教材：D:\Swansea-杜亦冯\biyeshj\Introduction-to-Robotics-3rd-edition.pdf
+本地神经网络控制教材：D:\Swansea-杜亦冯\biyeshj\untitled.pdf
+本地建模教程：D:\Swansea-杜亦冯\biyeshj\Building a clean model tutorial.pdf
+
+Google Scholar检索帮助：https://scholar.google.com/intl/en/scholar/help.html
+CoppeliaSim外部接口：https://manual.coppeliarobotics.com/en/zmqRemoteApiOverview.htm
+CoppeliaSim逆运动学教程：https://manual.coppeliarobotics.com/en/inverseKinematicsTutorial.htm
+
+在线论文信息核对日期：2026-10-13。
