@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "generated_date": "2026-10-18",
+  "hash_algorithm": "SHA256",
+  "excludes_self": true,
+  "files": [
+    {
+      "path": "output/documents/EG-353-POIP-2634068.docx",
+      "bytes": 449023,
+      "sha256": "84dc7272ff8436c40eb35f5d7b25efa95d6a53e2a177d2692a49a7dc163d6a86"
+    },
+    {
+      "path": "output/notes/项目103642文献检索与初步规划.txt",
+      "bytes": 14209,
+      "sha256": "41c8c90b09ef5894e0e255c7c843999eb862a815f3392093649c19a5d3d904cf"
+    },
+    {
+      "path": "output/notes/项目103642资料阅读笔记.docx",
+      "bytes": 45870,
+      "sha256": "f0454bbb3d770914d1358da89b32c6ad2828dae8a3e1bf693b340acb62fc076d"
+    },
+    {
+      "path": "output/notes/项目103642资料阅读笔记.txt",
+      "bytes": 13617,
+      "sha256": "8ecdf4e8f9762bc3464e42357334264ec8fe308f439ad9d5a71c15dd6398b0cb"
+    },
+    {
+      "path": "output/notes/project_103642_reading_notes.md",
+      "bytes": 12459,
+      "sha256": "25d486a5b671beac14301960856995be406557b5ce27a0e6b4edc558a8c414aa"
+    },
+    {
+      "path": "output/pdf/CoppeliaSim与PyCharm零基础指南.pdf",
+      "bytes": 431231,
+      "sha256": "87621261c198edaf3dd0b267b1ad2a3af64f653e2df788c13516e9142a00cb8f"
+    },
+    {
+      "path": "output/pdf/KUKA逐点1mm新手教程.pdf",
+      "bytes": 416122,
+      "sha256": "32c5eca65678f36389ddbdd2df03a836a8540ea45b4e6bd511fb1f9f861ca430"
+    },
+    {
+      "path": "output/research/综述低误差方法核对.md",
+      "bytes": 5928,
+      "sha256": "a11a32f8862508be517267aa7a4881c7d00548b44a60dbb3e0a613433f72246d"
+    },
+    {
+      "path": "output/research/KUKA_1mm研究路线与实验计划.md",
+      "bytes": 9350,
+      "sha256": "d10843eb17406e3c78e2a4fbfe63624aebff45443430b41a3ceb7fde663888a1"
+    },
+    {
+      "path": "output/tutorials/kuka_1mm_beginner/KUKA逐点1mm新手教程.md",
+      "bytes": 21204,
+      "sha256": "1c201903a3aa1c7089f7375c73be010384e1e6afad8c0b1bcf518618c79acad9"
+    },
+    {
+      "path": "output/tutorials/kuka_1mm_beginner/KUKA逐点1mm新手教程.pdf",
+      "bytes": 416122,
+      "sha256": "32c5eca65678f36389ddbdd2df03a836a8540ea45b4e6bd511fb1f9f861ca430"
+    },
+    {
+      "path": "output/tutorials/kuka_1mm_beginner/README.md",
+      "bytes": 2428,
+      "sha256": "3af4aef93cb40bb72b892c9f6310bd0e4ef840c5752a6f5a85294941ed4640db"
+    },
+    {
+      "path": "output/tutorials/kuka_data_collection/CoppeliaSim与PyCharm零基础指南.md",
+      "bytes": 26194,
+      "sha256": "96de0732f3a7731b732792f6f3e13638306b726a0d2538657b5323b4181270a7"
+    },
+    {
+      "path": "output/tutorials/kuka_data_collection/CoppeliaSim与PyCharm零基础指南.pdf",
+      "bytes": 431231,
+      "sha256": "87621261c198edaf3dd0b267b1ad2a3af64f653e2df788c13516e9142a00cb8f"
+    },
+    {
+      "path": "output/tutorials/kuka_data_collection/KUKA数据采集操作指南.md",
+      "bytes": 8409,
+      "sha256": "77e54573718e9cea109fd09b01f7d758821a1945be4f5c6aee18e1ce526cd112"
+    },
+    {
+      "path": "output/tutorials/kuka_data_collection/README.md",
+      "bytes": 3703,
+      "sha256": "4529b38ab6ecf2ffdc37b91b318ef81b6a497c168a4ad3348eb121327bc8c253"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/第一篇论文新手教程_数据准备修订版.pdf",
+      "bytes": 465334,
+      "sha256": "e469dff5d1b9762395f56fae65d5a9ba3249ec46e9cb1bcd2e956f7c80e61729"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/第一篇论文新手教程.md",
+      "bytes": 30010,
+      "sha256": "8932fc714acf9ca70dc434fe19d387e54fd3018eff8c5471b4da44a878c48e59"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/第一篇论文新手教程.pdf",
+      "bytes": 462322,
+      "sha256": "bd1f3dac0ebe9d3245a779e57cf8bcbe882616dda2a7754a4d665eb44eeb62df"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/明天运行说明.md",
+      "bytes": 4821,
+      "sha256": "5ec2010ae993b779348361d52bfd9f85997b066afaa57ed85c06dc9385f323c6"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/作者网络结构与ReLU说明.md",
+      "bytes": 3496,
+      "sha256": "1591a2418fd43536dafe78f89627990db0b2d09b02c4d679644f6c4a110d64b8"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/README.md",
+      "bytes": 10234,
+      "sha256": "7bfe73041a0c4af06d37e226e1cf1ffaa13878a561ef1e21b115b2fab5a16b57"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/kuka_01/coppelia_fk_test_01/结果解读.md",
+      "bytes": 3727,
+      "sha256": "08e4c2aa70c00bc041d2033f35e022572b937d9a2e178207caa5b2aade367e4c"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/tiago_01/fk_evaluation/结果解读.md",
+      "bytes": 2688,
+      "sha256": "b91cf43f547d1339c17e1002e6cd9765a82fb1943641aefd4c81af5a41a28c3c"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/tiago_01/ik_refinement/validation/结果解读.md",
+      "bytes": 1567,
+      "sha256": "191ca2b9cd8c9975c92c1f6d04a5c3c7cdf824e2cf23bfb16782fbc2ddc2b33d"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/tiago_10layers_01/实验结果.md",
+      "bytes": 1546,
+      "sha256": "a5769ba95f004af05ec697e14a500fa60d004f0db88e108f1861a565f880fa7a"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/tiago_10layers_01/validation_fk/结果解读.md",
+      "bytes": 2699,
+      "sha256": "1f05b6e36cbfbbcc1bae037d7814b6fbe4144fb25eebc7ec2502ebc7403603f9"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/tiago_2layers_01/实验结果.md",
+      "bytes": 1544,
+      "sha256": "0a23deb8361ff26888f63efc7c2a068793ae02c9a6f788d77e3dc9feb4488081"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/tiago_2layers_01/validation_fk/结果解读.md",
+      "bytes": 2698,
+      "sha256": "f47a2c1d8ddc59dd46b7d31f9ad33b8df1ec7afd53a2ff60496640ae8280e6f3"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/tiago_author80_structure_01/实验结果.md",
+      "bytes": 1726,
+      "sha256": "8c4a8d3fa5c3b4c9510d36cce2f34346b0df37a73993d6f539fdab954047c0a9"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/tiago_author80_structure_01/validation_fk/结果解读.md",
+      "bytes": 2711,
+      "sha256": "d857f70366d87cd1d7074b992ddb318be432c9b9b5e8774a85391f248d487aec"
+    },
+    {
+      "path": "output/tutorials/tiago_ik_beginner/runs/tiago_capacity_01/验证集对照.md",
+      "bytes": 1601,
+      "sha256": "bb0d93e98b359b384b7a3eaffec2ad3567daaf87ea73368b2015b91d554aeb15"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5398,
+      "sha256": "ae7b9b019f104f38674eddccc3bfb885d95f32fa2818c3ef4abe1b7656bbe1e3"
+    }
+  ]
+}
